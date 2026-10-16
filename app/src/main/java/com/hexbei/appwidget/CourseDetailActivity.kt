@@ -1,9 +1,12 @@
 package com.hexbei.appwidget
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -57,6 +60,26 @@ class CourseDetailActivity : AppCompatActivity() {
             }
         }
         viewModel.loadCourse(courseId)
+
+        // 编辑：跳到新增/编辑页，带上课程 id 进入编辑模式
+        findViewById<Button>(R.id.btnEdit).setOnClickListener {
+            startActivity(
+                Intent(this, AddCourseActivity::class.java)
+                    .putExtra(AddCourseActivity.EXTRA_COURSE_ID, courseId)
+            )
+        }
+
+        // 删除：弹确认框，确认后删除并返回列表
+        findViewById<Button>(R.id.btnDelete).setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("删除课程")
+                .setMessage("确定要删除这门课吗？")
+                .setPositiveButton("删除") { _, _ ->
+                    viewModel.delete(courseId) { finish() }
+                }
+                .setNegativeButton("取消", null)
+                .show()
+        }
     }
 
     companion object {

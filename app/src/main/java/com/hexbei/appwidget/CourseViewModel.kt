@@ -48,19 +48,21 @@ class CourseViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    /** 更新课程 */
-    fun update(course: Course) {
+    /** 更新课程，完成后再回调（供界面安全关闭） */
+    fun update(course: Course, onDone: () -> Unit = {}) {
         viewModelScope.launch {
             repository.update(course)
             load()
+            onDone()
         }
     }
 
-    /** 删除课程 */
-    fun delete(id: Long) {
+    /** 删除课程，完成后再回调（供界面安全关闭） */
+    fun delete(id: Long, onDone: () -> Unit = {}) {
         viewModelScope.launch {
             repository.delete(id)
             load()
+            onDone()
         }
     }
 
