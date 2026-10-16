@@ -63,4 +63,15 @@ class CourseViewModel(application: Application) : AndroidViewModel(application) 
             load()
         }
     }
+
+    // 详情页用：当前正在查看的课程
+    private val _currentCourse = MutableStateFlow<Course?>(null)
+    val currentCourse: StateFlow<Course?> = _currentCourse.asStateFlow()
+
+    /** 加载单门课程给详情页展示 */
+    fun loadCourse(id: Long) {
+        viewModelScope.launch {
+            _currentCourse.value = repository.getById(id)
+        }
+    }
 }

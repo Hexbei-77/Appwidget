@@ -38,7 +38,12 @@ class MainActivity : AppCompatActivity() {
         val recycler = findViewById<RecyclerView>(R.id.rvCourses)
         val emptyView = findViewById<TextView>(R.id.tvEmpty)
 
-        adapter = CourseAdapter(onClick = { /* 详情页后续再加 */ })
+        adapter = CourseAdapter(onClick = { course ->
+            startActivity(
+                Intent(this, CourseDetailActivity::class.java)
+                    .putExtra(CourseDetailActivity.EXTRA_COURSE_ID, course.id)
+            )
+        })
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = adapter
 
