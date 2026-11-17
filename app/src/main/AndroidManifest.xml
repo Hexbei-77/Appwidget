@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 倒计时组件需要每分钟唤醒刷新（Android 12+ 精确闹钟权限） -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <!-- 课表云分享 / 云端解析需要联网（安装时授权，无需运行时弹窗） -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,16 +17,110 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appwidget">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- C6 深度链接：外部（adb / 浏览器 / 其他 App）可用 appwidget://course/xxx 进入对应功能 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="appwidget" android:host="course" />
+            </intent-filter>
+
+            <!-- C6 应用快捷方式（长按桌面图标可见，静态 3 个 + 动态 1 个在 MainActivity 里推送） -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+        <!-- 课程详情页：列表点进来 -->
+        <activity
+            android:name=".CourseDetailActivity"
+            android:exported="false" />
+
+        <!-- 关于页 -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+
+        <!-- 今日课程桌面小组件 -->
+        <receiver
+            android:name=".widget.TodayCourseWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/today_course_widget_info" />
+        </receiver>
+
+        <!-- 下一节课 + 倒计时 合并桌面组件（4×2 横幅） -->
+        <receiver
+            android:name=".widget.NextCountdownWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/next_countdown_widget_info" />
+        </receiver>
+
+        <!-- 今日签到桌面小组件 -->
+        <receiver
+            android:name=".widget.CheckInWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/checkin_widget_info" />
+        </receiver>
+
+        <!-- 周历视图桌面小组件 -->
+        <receiver
+            android:name=".widget.WeekViewWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/week_view_widget_info" />
+        </receiver>
+
+        <!-- 周进度环桌面小组件 -->
+        <receiver
+            android:name=".widget.WeekProgressWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/week_progress_widget_info" />
+        </receiver>
+
+        <!-- 今日课程列表数据服务（ListView 的数据源） -->
+        <service
+            android:name=".widget.TodayCourseService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
     </application>
 
 </manifest>

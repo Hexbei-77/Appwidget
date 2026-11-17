@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Appwidget</string>
+    <string name="app_name">课程表</string>
+
+    <!-- C6 应用快捷方式（长按桌面图标可见） -->
+    <string name="sc_add_short">加一门课</string>
+    <string name="sc_add_long">手动录入一门课程</string>
+    <string name="sc_import_short">PDF 导入</string>
+    <string name="sc_import_long">从课表 PDF 批量导入课程</string>
+    <string name="sc_settings_short">组件设置</string>
+    <string name="sc_settings_long">调整小组件主题、字号与动态背景</string>
+
+    <!-- 桌面小组件在添加列表里显示的说明（previewLayout 旁边的描述文字） -->
+    <string name="wd_today_course">今日课程：当天全部课程的可滚动列表</string>
+    <string name="wd_next_countdown">下一节+倒计时：课程名与距上课天时分一屏看完</string>
+    <string name="wd_week_view">本周课表：周一到周日、节次对齐的整周课表</string>
+    <string name="wd_week_progress">本周进度环：本周已上节数占比 + 自定义鼓励语</string>
+    <string name="wd_checkin">今日签到：点一下打卡，第二天自动重置</string>
 </resources>
