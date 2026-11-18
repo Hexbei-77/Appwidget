@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF3E7"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widgetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="今日课程"
+            android:textColor="#8A5A2B"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widgetWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第 1 周"
+            android:textColor="#B08968"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- 当日全部课程的可滚动列表（数据由 TodayCourseService 提供） -->
+    <ListView
+        android:id="@+id/widgetCourseList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/widgetEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="今天没课，休息一下 ☕"
+        android:textColor="#B08968"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+</LinearLayout>
