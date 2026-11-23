@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2FB"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- 标题行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widgetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="本周课表"
+            android:textColor="#2D5A8A"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widgetWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第 1 周"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- 表头：一 二 三 四 五 六 日 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT0"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="节次"
+            android:textColor="#8A9AAF"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/wvH1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="一"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="二"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="三"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="四"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="五"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="六"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/wvH7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="日"
+            android:textColor="#5A7A9A"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- 第 1 行：1-2 节 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT1"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lineSpacingExtra="0dp"
+            android:text="1-2节&#10;08:00-09:40"
+            android:textColor="#8A9AAF"
+            android:textSize="7sp" />
+
+        <TextView android:id="@+id/wvR1D1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR1D7" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第 2 行：3-4 节 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT2"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="3-4节&#10;10:00-11:40"
+            android:textColor="#8A9AAF"
+            android:textSize="7sp" />
+
+        <TextView android:id="@+id/wvR2D1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR2D7" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第 3 行：5-6 节 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT3"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="5-6节&#10;14:00-15:40"
+            android:textColor="#8A9AAF"
+            android:textSize="7sp" />
+
+        <TextView android:id="@+id/wvR3D1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR3D7" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第 4 行：7-8 节 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT4"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="7-8节&#10;16:00-17:40"
+            android:textColor="#8A9AAF"
+            android:textSize="7sp" />
+
+        <TextView android:id="@+id/wvR4D1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR4D7" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第 5 行：9-10 节 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wvT5"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="9-10节&#10;19:00-20:40"
+            android:textColor="#8A9AAF"
+            android:textSize="7sp" />
+
+        <TextView android:id="@+id/wvR5D1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="2dp" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+        <TextView android:id="@+id/wvR5D7" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center" android:ems="1" android:maxLines="12" android:padding="1dp" android:textColor="#333333" android:textSize="9sp" android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
