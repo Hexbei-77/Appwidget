@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2EA"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/widgetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本周进度"
+        android:textColor="#2D5A2D"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/widgetRing"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="3dp"
+        android:contentDescription="本周上课进度环" />
+
+    <TextView
+        android:id="@+id/widgetMotto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="好好学习，天天向上！"
+        android:textColor="#5A7A5A"
+        android:textSize="9sp" />
+
+</LinearLayout>
