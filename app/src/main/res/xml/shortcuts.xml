@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- C6 静态应用快捷方式：长按桌面图标即可看到，点一下直达对应功能（内部走 appwidget 深链） -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="shortcut_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_add"
+        android:shortcutShortLabel="@string/sc_add_short"
+        android:shortcutLongLabel="@string/sc_add_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="appwidget://course/add" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="shortcut_import"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_import"
+        android:shortcutShortLabel="@string/sc_import_short"
+        android:shortcutLongLabel="@string/sc_import_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="appwidget://course/import" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="shortcut_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_settings"
+        android:shortcutShortLabel="@string/sc_settings_short"
+        android:shortcutLongLabel="@string/sc_settings_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="appwidget://course/settings" />
+    </shortcut>
+
+</shortcuts>
